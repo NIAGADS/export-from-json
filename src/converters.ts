@@ -204,17 +204,17 @@ export function createXLSData (data: any[], options?: CreateXLSDataOptions) {
   return content
 }
 
-export function createXMLData (data: object) {
+export function createXMLData (data: object, baseTag:string='base') {
   const content =
 
 `<?xml version="1.0" encoding="utf-8"?><!DOCTYPE base>
-${_renderXML(data, 'base')}
+${_renderXML(data, baseTag)}
 `
 
   return content
 }
 
-function _renderXML (data: any, tagName: string, arrayElementTag = 'element', spaces = 0): string {
+function _renderXML (data: any, tagName: string, arrayElementTag = 'row', spaces = 0): string {
   const tag = normalizeXMLName(tagName)
   const indentSpaces = indent(spaces)
 
@@ -227,7 +227,7 @@ function _renderXML (data: any, tagName: string, arrayElementTag = 'element', sp
     : typeof data === 'object'
       ? getEntries(data as Record<string, unknown>)
         .map(([key, value]) => _renderXML(value, key, arrayElementTag, spaces + 2)).join('\n')
-      : indentSpaces + '  ' + stripHTML(String(data))
+      : indentSpaces + stripHTML(String(data))
 
   const contentWithWrapper =
 
