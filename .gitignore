@@ -1,5 +1,6 @@
 .rpt2_cache
 .vscode
 node_modules
-dist
+package-lock.json
+# dist
 .DS_Store
