@@ -16,7 +16,7 @@ export interface IOption<R = void> {
   beforeTableEncode?: (
     tableRow: Array<{ fieldName: string, fieldValues: string[] }>,
   ) => Array<{ fieldName: string, fieldValues: string[]}>
-  delimiter?: ',' | ';'
+  delimiter?: ',' | ';' | '\t'
 }
 
 function exportFromJSON<R = void> ({
