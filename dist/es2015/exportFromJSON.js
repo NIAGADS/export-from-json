@@ -42,7 +42,7 @@ function exportFromJSON({ data, fileName = 'download', extension, fileNameFormat
             return processor(content, exportType, normalizeFileName(fileName, extension !== null && extension !== void 0 ? extension : 'xls', fileNameFormatter));
         }
         case 'xml': {
-            const content = createXMLData(safeData, fileName);
+            const content = createXMLData(safeData);
             return processor(content, exportType, normalizeFileName(fileName, extension !== null && extension !== void 0 ? extension : 'xml', fileNameFormatter));
         }
         default:

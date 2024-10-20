@@ -281,8 +281,8 @@
       return content;
   }
   function createXMLData(data, baseTag) {
-      if (baseTag === void 0) { baseTag = 'base'; }
-      var content = "<?xml version=\"1.0\" encoding=\"utf-8\"?><!DOCTYPE base>\n".concat(_renderXML(data, baseTag), "\n");
+      if (baseTag === void 0) { baseTag = 'table'; }
+      var content = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n".concat(_renderXML(data, baseTag), "\n");
       return content;
   }
   function _renderXML(data, tagName, arrayElementTag, spaces) {
@@ -357,7 +357,7 @@
               return processor(content, exportType, normalizeFileName(fileName, extension !== null && extension !== void 0 ? extension : 'xls', fileNameFormatter));
           }
           case 'xml': {
-              var content = createXMLData(safeData, fileName);
+              var content = createXMLData(safeData);
               return processor(content, exportType, normalizeFileName(fileName, extension !== null && extension !== void 0 ? extension : 'xml', fileNameFormatter));
           }
           default:

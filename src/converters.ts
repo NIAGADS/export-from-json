@@ -204,12 +204,16 @@ export function createXLSData (data: any[], options?: CreateXLSDataOptions) {
   return content
 }
 
-export function createXMLData (data: object, baseTag:string='base') {
+export function createXMLData (data: object, baseTag:string='table') {
   const content =
 
-`<?xml version="1.0" encoding="utf-8"?><!DOCTYPE base>
+`<?xml version="1.0" encoding="utf-8"?>
 ${_renderXML(data, baseTag)}
 `
+
+/* `<?xml version="1.0" encoding="utf-8"?><!DOCTYPE table_export>
+${_renderXML(data, baseTag)}
+`*/
 
   return content
 }

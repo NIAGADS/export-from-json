@@ -79,7 +79,7 @@ function exportFromJSON<R = void> ({
       return processor(content, exportType, normalizeFileName(fileName, extension ?? 'xls', fileNameFormatter))
     }
     case 'xml': {
-      const content = createXMLData(safeData, fileName)
+      const content = createXMLData(safeData)
 
       return processor(content, exportType, normalizeFileName(fileName, extension ?? 'xml', fileNameFormatter))
     }

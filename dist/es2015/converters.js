@@ -116,8 +116,8 @@ export function createXLSData(data, options) {
 `;
     return content;
 }
-export function createXMLData(data, baseTag = 'base') {
-    const content = `<?xml version="1.0" encoding="utf-8"?><!DOCTYPE base>
+export function createXMLData(data, baseTag = 'table') {
+    const content = `<?xml version="1.0" encoding="utf-8"?>
 ${_renderXML(data, baseTag)}
 `;
     return content;

@@ -43,7 +43,7 @@ function exportFromJSON(_a) {
             return processor(content, exportType, normalizeFileName(fileName, extension !== null && extension !== void 0 ? extension : 'xls', fileNameFormatter));
         }
         case 'xml': {
-            var content = createXMLData(safeData, fileName);
+            var content = createXMLData(safeData);
             return processor(content, exportType, normalizeFileName(fileName, extension !== null && extension !== void 0 ? extension : 'xml', fileNameFormatter));
         }
         default:
