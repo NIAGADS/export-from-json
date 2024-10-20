@@ -1,6 +1,6 @@
 {
   "name": "export-from-json",
-  "version": "1.7.5",
+  "version": "1.7.5.niagads",
   "description": "Export to txt, json, csv, xls, xml format file from valid JavaScript JSON object.",
   "keywords": [
     "json",
@@ -14,8 +14,8 @@
   "main": "dist/umd/index.js",
   "module": "dist/esm/index.js",
   "typings": "dist/types/index.d.ts",
-  "repository": "https://github.com/zheeeng/export-from-json",
-  "author": "Zheeeng",
+  "repository": "https://github.com/NIAGADS/export-from-json",
+  "author": "Zheeeng / modified by fossilfirend",
   "license": "MIT",
   "scripts": {
     "prebuild": "rm -rf dist",
