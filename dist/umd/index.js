@@ -29,8 +29,7 @@
       return Array(spaces + 1).join(' ');
   }
   function stripHTML(text) {
-      console.log(text);
-      var replacement = text.replace(/([<>&])/g, function (_, $1) {
+      return text.replace(/([<>&])/g, function (_, $1) {
           switch ($1) {
               case '<': return '&lt;';
               case '>': return '&gt;';
@@ -38,8 +37,6 @@
               default: return '';
           }
       });
-      console.log(replacement);
-      return replacement;
   }
 
   function generateDataURI(content, type, byBlob) {
