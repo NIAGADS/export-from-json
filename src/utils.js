@@ -6,17 +6,17 @@ export function assert(condition, msg) {
         throw new Error(msg);
 }
 export function getValues(data) {
-    return Object.keys(data).map(key => data[key]);
+    return Object.keys(data).map(function (key) { return data[key]; });
 }
 export function getKeys(data) {
     return Object.keys(data);
 }
 export function getEntries(data) {
-    return Object.keys(data).map(key => [key, data[key]]);
+    return Object.keys(data).map(function (key) { return [key, data[key]]; });
 }
 export function normalizeFileName(fileName, extension, fileNameFormatter) {
-    const suffix = '.' + extension;
-    const extensionPattern = new RegExp(`(\\${extension})?$`);
+    var suffix = '.' + extension;
+    var extensionPattern = new RegExp("(\\".concat(extension, ")?$"));
     return fileNameFormatter(fileName).replace(extensionPattern, suffix);
 }
 export function normalizeXMLName(name) {
@@ -27,8 +27,7 @@ export function indent(spaces) {
     return Array(spaces + 1).join(' ');
 }
 export function stripHTML(text) {
-    console.log(text);
-    const replacement = text.replace(/([<>&])/g, (_, $1) => {
+    return text.replace(/([<>&])/g, function (_, $1) {
         switch ($1) {
             case '<': return '&lt;';
             case '>': return '&gt;';
@@ -36,6 +35,4 @@ export function stripHTML(text) {
             default: return '';
         }
     });
-    console.log(replacement);
-    return replacement;
 }

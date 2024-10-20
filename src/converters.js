@@ -172,7 +172,7 @@ function _renderXML(data, tagName, arrayElementTag, spaces) {
                 var _b = __read(_a, 2), key = _b[0], value = _b[1];
                 return _renderXML(value, key, arrayElementTag, spaces + 2);
             }).join('\n')
-            : stripHTML(String(data));
-    var contentWithWrapper = "".concat(indentSpaces, "<").concat(tag, ">").concat(content, "</").concat(tag, ">");
+            : indentSpaces + stripHTML(String(data));
+    var contentWithWrapper = "".concat(indentSpaces, "<").concat(tag, ">\n").concat(content, "\n").concat(indentSpaces, "</").concat(tag, ">");
     return contentWithWrapper;
 }

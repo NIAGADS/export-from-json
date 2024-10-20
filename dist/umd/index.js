@@ -29,7 +29,8 @@
       return Array(spaces + 1).join(' ');
   }
   function stripHTML(text) {
-      return text.replace(/([<>&])/g, function (_, $1) {
+      console.log(text);
+      var replacement = text.replace(/([<>&])/g, function (_, $1) {
           switch ($1) {
               case '<': return '&lt;';
               case '>': return '&gt;';
@@ -37,6 +38,8 @@
               default: return '';
           }
       });
+      console.log(replacement);
+      return replacement;
   }
 
   function generateDataURI(content, type, byBlob) {
@@ -301,8 +304,8 @@
                   var _b = __read(_a, 2), key = _b[0], value = _b[1];
                   return _renderXML(value, key, arrayElementTag, spaces + 2);
               }).join('\n')
-              : indentSpaces + stripHTML(String(data));
-      var contentWithWrapper = "".concat(indentSpaces, "<").concat(tag, ">\n").concat(content, "\n").concat(indentSpaces, "</").concat(tag, ">");
+              : stripHTML(String(data));
+      var contentWithWrapper = "".concat(indentSpaces, "<").concat(tag, ">").concat(content, "</").concat(tag, ">");
       return contentWithWrapper;
   }
 

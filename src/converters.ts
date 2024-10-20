@@ -227,13 +227,9 @@ function _renderXML (data: any, tagName: string, arrayElementTag = 'row', spaces
     : typeof data === 'object'
       ? getEntries(data as Record<string, unknown>)
         .map(([key, value]) => _renderXML(value, key, arrayElementTag, spaces + 2)).join('\n')
-      : indentSpaces + stripHTML(String(data))
+      : stripHTML(String(data))
 
-  const contentWithWrapper =
-
-`${indentSpaces}<${tag}>
-${content}
-${indentSpaces}</${tag}>`
+  const contentWithWrapper = `${indentSpaces}<${tag}>${content}</${tag}>`
 
   return contentWithWrapper
 }

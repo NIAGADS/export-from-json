@@ -27,7 +27,8 @@ export function indent(spaces) {
     return Array(spaces + 1).join(' ');
 }
 export function stripHTML(text) {
-    return text.replace(/([<>&])/g, function (_, $1) {
+    console.log(text);
+    var replacement = text.replace(/([<>&])/g, function (_, $1) {
         switch ($1) {
             case '<': return '&lt;';
             case '>': return '&gt;';
@@ -35,4 +36,6 @@ export function stripHTML(text) {
             default: return '';
         }
     });
+    console.log(replacement);
+    return replacement;
 }
