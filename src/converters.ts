@@ -111,6 +111,9 @@ export function _createTableEntries (
 // Rule: All other fields do not require double quotes.
 // Rule: Double quotes within values are represented by two contiguous double quotes.
 function encloser (value: string, delimiter: ',' | ';' | '\t') {
+  if (delimiter === '\t') { // this is not an issue for tab-delimited files
+    return value
+  }
   const enclosingTester = new RegExp(`${delimiter}|"|\n`)
   const enclosingCharacter = enclosingTester.test(value) ? '"' : ''
   const escaped = value.replace(/"/g, '""')
