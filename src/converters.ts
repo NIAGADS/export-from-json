@@ -1,4 +1,4 @@
-import { isArray, getEntries, normalizeXMLName, indent, stripHTML, assert, getKeys } from './utils.js'
+import { isArray, getEntries, normalizeXMLName, indent, stripHTML, assert, getKeys } from './utils.ts'
 
 export function _createFieldsMapper (fields?: string[] | Record<string, string>) {
   if (
