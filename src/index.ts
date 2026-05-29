@@ -1,5 +1,5 @@
-import exportFromJSON from './exportFromJSON.ts'
-import type { ExportType } from './types.ts'
+import exportFromJSON from './exportFromJSON.js'
+import type { ExportType } from './types.js'
 
 export type { ExportType }
 export default exportFromJSON
